@@ -5,16 +5,15 @@ import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 
 const Body = () => {
-
   const appRouter = createBrowserRouter([
     {
       path: "/",
-      element: <Login />
+      element: <Login />,
     },
     {
       path: "/browse",
-      element: <Browse />
-    }
+      element: <Browse />,
+    },
   ]);
 
   return (
@@ -22,6 +21,6 @@ const Body = () => {
       <RouterProvider router={appRouter} />
     </div>
   );
-}; 
+};
 
 export default Body;
