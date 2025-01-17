@@ -1,7 +1,8 @@
 import React from "react";
 import { IMG_CDN_URL } from "../utils/constants";
 
-const MovieCard = ({posterPath}) => {
+const MovieCard = ({ posterPath }) => {
+  if (!posterPath) return null;
   return (
     <div className="w-48 flex-shrink-0">
       <img alt="Movie Card" src={IMG_CDN_URL + posterPath} />
