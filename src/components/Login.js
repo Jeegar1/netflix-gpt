@@ -93,53 +93,56 @@ const Login = () => {
         <img
           src={BG_IMG_URL}
           alt="bg-image"
+          className="h-screen xl:h-auto object-cover"
         />
       </div>
       <Header />
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="py-10 px-12 bg-black/85 max-w-md mx-auto text-white rounded-md"
+        className="pt-[30%] md:pt-[20%] lg:pt-[10%]"
       >
-        <h1 className="font-bold text-[32px] leading-10 pb-4 mb-4">
-          {isSignInForm ? "Sign In" : "Sign Up"}
-        </h1>
-        {!isSignInForm && (
+        <div className="py-10 px-12 bg-black/85 max-w-md mx-auto text-white rounded-md">
+          <h1 className="font-bold text-[32px] leading-10 pb-4 mb-4">
+            {isSignInForm ? "Sign In" : "Sign Up"}
+          </h1>
+          {!isSignInForm && (
+            <input
+              ref={name}
+              type="text"
+              placeholder="Full Name"
+              className="px-4 py-4 mb-4 w-full rounded-md bg-gray-800 "
+            />
+          )}
           <input
-            ref={name}
-            type="text"
-            placeholder="Full Name"
+            ref={email}
+            type="email"
+            placeholder="Email Address"
             className="px-4 py-4 mb-4 w-full rounded-md bg-gray-800 "
           />
-        )}
-        <input
-          ref={email}
-          type="email"
-          placeholder="Email Address"
-          className="px-4 py-4 mb-4 w-full rounded-md bg-gray-800 "
-        />
-        <input
-          ref={password}
-          type="password"
-          placeholder="Password"
-          className="px-4 py-4 w-full mb-4 rounded-md bg-gray-800"
-        />
-        <p className="text-red-500 font-semibold mb-4 text-md">
-          {errorMessage}
-        </p>
-        <button
-          className="px-4 py-2 bg-red-600 w-full rounded-md hover:bg-red-700 transition duration-500"
-          onClick={handleButtonClick}
-        >
-          {isSignInForm ? "Sign In" : "Sign Up"}
-        </button>
-        <p
-          className="mt-4 cursor-pointer inline-block"
-          onClick={toggleSignInForm}
-        >
-          {isSignInForm
-            ? "New to Netflix? Sign Up Now"
-            : "Already registered? Sign In Now."}
-        </p>
+          <input
+            ref={password}
+            type="password"
+            placeholder="Password"
+            className="px-4 py-4 w-full mb-4 rounded-md bg-gray-800"
+          />
+          <p className="text-red-500 font-semibold mb-4 text-md">
+            {errorMessage}
+          </p>
+          <button
+            className="px-4 py-2 bg-red-600 w-full rounded-md hover:bg-red-700 transition duration-500"
+            onClick={handleButtonClick}
+          >
+            {isSignInForm ? "Sign In" : "Sign Up"}
+          </button>
+          <p
+            className="mt-4 cursor-pointer inline-block"
+            onClick={toggleSignInForm}
+          >
+            {isSignInForm
+              ? "New to Netflix? Sign Up Now"
+              : "Already registered? Sign In Now."}
+          </p>
+        </div>
       </form>
     </div>
   );

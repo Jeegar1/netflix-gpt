@@ -55,7 +55,7 @@ const Header = () => {
   };
 
   return (
-    <div className="px-12 py-4 bg-gradient-to-b from-black flex justify-between items-center absolute w-screen z-10">
+    <div className="px-12 py-4 bg-gradient-to-b from-black flex flex-col md:flex-row justify-between items-center absolute w-screen z-10">
       <img className="w-44" src={LOGO} alt="Logo" />
       {user && (
         <div className="flex items-center gap-2">
@@ -77,7 +77,7 @@ const Header = () => {
           >
             {showGptSearch ? "Homepage" : "GPT Search"}
           </button>
-          <img src={user?.photoURL} alt="User Icon" className="w-10" />
+          <img src={user?.photoURL} alt="User Icon" className="hidden md:[inline-flex] w-10" />
           <button onClick={handleSignOut} className="font-bold text-white">
             (Sign Out)
           </button>
